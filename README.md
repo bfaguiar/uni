@@ -2,9 +2,7 @@
 
 
 
-#### 📱 [Course overview PT]
-
-(https://www.ua.pt/pt/curso/23/p)
+#### 📱 [Course overview PT](https://www.ua.pt/pt/curso/23/p)
 
 #### 📱 Course overview EN:
 
