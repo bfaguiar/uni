@@ -1,0 +1,14 @@
+GRUPO I
+No prático, tinham uma imagem do datapath do multicycle, depois tinha uma tabela que tinhas de preencher os sinais de controlo em cada fase para uma instrução dada
+Depois havia outra instrução, e tinhas de preencher uma tabela com que valores tomava o o registo a, b, aluout, etc
+Havia nessa imagem do multicycle escritos alguns valores dos sinais de controlo e de algumas saídas do instruction splitter e tinhas umas perguntas, sobre qual era a instrução, em que fase ia
+
+GRUPO II
+É dado um pequeno trecho de código assembly.
+a) Preencher tabela com as três primeiras instruções dadas, transcrevendo para código máquina e indicar o endereço dessa instrução na memória.
+b) Calcular quantos ciclos são necessários até alcançar uma certa instrução, numa implementação single cycle e multi cycle
+Tinham o código vhdl de uma implementação do módulo pcupdate, é depois uma imagem dos sinais tipo zero, branch, jump, jaddr, offset
+E a partir dessa análise tinhas de preencher os valores que o PC ia tomar
+
+GRUPO III
+Implementar em VHDL uma memória RAM com leitura assíncrona e escrita síncrona.

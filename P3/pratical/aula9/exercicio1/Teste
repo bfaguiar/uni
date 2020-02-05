@@ -1,0 +1,61 @@
+package exercicio1;
+
+import java.util.Scanner;
+import static java.lang.System.*;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Teste {
+
+//	static Scanner sc = new Scanner(System.in);
+	static ScannerAbeirense sa = new ScannerAbeirense();
+	
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		String str = "Aveiro e fixe e divertido";
+		
+//		while (sa.hasNext()) {
+//			sa.stringReplace(str);
+//			sa.next();
+//		}
+		
+		String msg = new String("");
+		
+		//Ficheiro
+		File file = new File("fich.txt");
+		
+		if(file.exists()){
+			BufferedReader br = new BufferedReader(new FileReader(file));
+
+				String line;
+				while ((line = br.readLine()) != null) {
+					msg = msg + "\n" + line;
+					//System.out.println(line);
+				}
+				msg = sa.stringReplace(msg);
+				out.println("" + msg);
+		} else{
+			out.println("sem ficheiro");
+		}
+		
+		//Teclado
+//		do{
+//			
+//			str = sa.nextLine();
+//			if(!str.equalsIgnoreCase("sair")){
+//				msg = msg + "\n" + str;
+//			}
+//			
+//		} while(!str.equalsIgnoreCase("sair"));
+//		
+//		msg = sa.stringReplace(msg);
+//		out.println("" + msg);
+		
+	}
+
+}

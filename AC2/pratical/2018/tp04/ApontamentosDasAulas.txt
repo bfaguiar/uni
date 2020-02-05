@@ -1,0 +1,10 @@
+
+
+Ativar led:
+
+RB8 = 1; RB6 = 0;
+
+
+50MHZ.
+
+

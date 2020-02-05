@@ -1,0 +1,16 @@
+package exercicio3;
+
+import java.util.GregorianCalendar;
+
+public class Data{
+
+	static GregorianCalendar data;
+
+	public Data(int dia, int mes, int ano){
+		data = new GregorianCalendar(ano + 1900, mes, dia);
+	}
+	
+	public static GregorianCalendar today(){
+		return data;
+	}
+}

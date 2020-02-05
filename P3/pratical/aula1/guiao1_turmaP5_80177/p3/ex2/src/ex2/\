@@ -1,0 +1,108 @@
+
+" ############# PATHOGEN ########################
+
+"execute pathogen#infect()
+"syntax on
+"filetype plugin indent on
+
+" ##############################################
+
+"##################### VUNDLE ##################
+
+set nocompatible              " be iMproved, required
+filetype off  
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" #################################################
+
+" ##################### NEOBUNDLE ####################
+
+" Note: Skip initialization for vim-tiny or vim-small.
+"if 0 | endif
+
+"if &compatible
+"  set nocompatible               " Be iMproved
+"endif
+
+" Required:
+"set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+"call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+"NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+"
+"
+
+"NeoBundle 'itchyny/lightline.vim'
+
+" call neobundle#end()
+
+" Required:
+"filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+"NeoBundleCheck
+
+"#######################################################
+
+" ####################### VIM PLUG ###########################
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+"call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+"Plug 'itchyny/lightline.vim'
+"Plug 'scrooloose/nerdtree'
+" Initialize plugin system
+"call plug#end()
+
+
+
+" #############################################################
+
+"set laststatus=2
+"set noshowmode
+
+" select dir tree with ctrl D
+"map <C-d> :NERDTreeToggle<CR> 
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" set rtp+=/usr/local/opt/fzf
+"##############################################################
+
+syntax on
+
+"colorscheme default 
+
+set number
+
+set tabstop=4
+
+set shiftwidth=4
+
+set autoindent
+
+set smartindent
+
+set cindent
+
+	
+set backspace=2
+
+Bundle 'sonph/onehalf', {'rtp': 'vim/'}
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'
+let g:lightline.colorscheme='onehalfdark'
+

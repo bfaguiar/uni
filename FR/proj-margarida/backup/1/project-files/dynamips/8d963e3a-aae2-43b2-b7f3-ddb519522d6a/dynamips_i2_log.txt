@@ -1,0 +1,10 @@
+Dec 23 19:50:39.554 HYPERVISOR: Release 0.2.17-amd64/Linux (tag 2017072410)
+Dec 23 19:50:39.554 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 37861.
+Dec 23 19:50:39.564 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 23 19:50:39.564 HYPERVISOR: exec_cmd: hypervisor working_dir /home/ubuntu/GNS3/projects/mini-projeto/project-files/dynamips 
+Dec 23 19:50:39.564 GENERAL: working_dir=/home/ubuntu/GNS3/projects/mini-projeto/project-files/dynamips
+Dec 23 19:50:39.564 HYPERVISOR: exec_cmd: ethsw create SW1 
+Dec 23 20:04:27.998 HYPERVISOR: exec_cmd: ethsw delete SW1 
+Dec 23 20:04:28.001 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 23 20:04:28.275 HYPERVISOR: Stopped.
+Dec 23 20:04:28.275 GENERAL: reset done.

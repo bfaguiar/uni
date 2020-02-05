@@ -1,0 +1,102 @@
+package ex4;
+
+import static java.lang.System.out;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class Translatenumbers {
+	
+	
+	static Scanner sc = new Scanner(System.in);
+	
+	
+	public static void main(String[] args) throws IOException {
+		
+		
+		
+	    Map<String, Integer> mapa = new HashMap<>();
+	    
+	    fileToMap(mapa);
+	    printMap(mapa);
+	  
+	    String escrever = sc.nextLine();
+	    
+	    String[] words = escrever.split("\\s+|-"); // '\\s+': splita com zero ou mais espaços. 
+	    										  //  '|-'  : splita o '-' como um ou.
+
+	    List<String> validWords = new ArrayList<>();
+	    
+
+	    for(int i = 0; i < words.length; i++) {
+	    	 if (mapa.containsKey(words[i])) {
+	    		 validWords.add(words[i]);
+	    	 }
+	    }
+	    
+	   double result = mapa.get(validWords.get(0));
+	   
+	   double mult   = validWords.parallelStream().map(Integer::parseInt).filter(num -> num >= 100).reduce(1, Math::multiplyExact);
+	  
+	   double num    = validWords.parallelStream().map(Integer::parseInt).filter(num -> num < 100).reduce(1, Math::addExact);
+			  				  
+			  				  
+			  			
+	    
+	    	
+	    	
+//	    	if(mapa.containsKey(words[i-1])) {
+//	    		Integer word0 = mapa.get(words[i-1]);
+//	    		if (!(word0 == 1000000 || word0 == 1000 || word0 == 100 || word0 == 10))  {
+//	    			if (mapa.containsKey(words[i])) {
+//	    				Integer word1 = mapa.get(words[i]);
+//	    						if (!(word1 == 1000000 || word1 == 1000 || word1 == 100 || word1 == 10))
+//	    							result = result + (word0 + word1);
+//	
+//	    						else 
+//	    							result = result + (word0 * word1);	
+//	    			}
+//	    		}
+//	    		else if ((word0 == 1000000 || word0 == 1000 || word0 == 100 || word0 == 10) && (i > 1)) {
+//	    			if (mapa.containsKey(words[i])) {
+//	    				Integer word1 = mapa.get(words[i]);
+//	    						if (!(word1 == 1000000 || word1 == 1000 || word1 == 100 || word1 == 10))
+//	    							result = result + (word0 * word1);
+//	    						else 
+//	    							result = result * (word0 * word1);	
+//	    			}
+//	    		}
+//	    			
+//	    	}
+	   
+	    
+	
+	}
+	
+	static Map<String, Integer> fileToMap(Map<String, Integer> mapa) throws IOException {
+		
+		List<String> lines = Files.readAllLines(Paths.get("/home/bruno/Desktop/LFA/bloco1", "numbers.txt"));
+		
+	      	  lines.forEach(elem -> {
+	    	  String[] parse = elem.split(" - ");
+	    	  mapa.put(parse[1], Integer.parseInt(parse[0]));
+			});
+		return mapa;
+	      
+	}
+	
+	static void printMap(Map<String, Integer> mapa) {
+	     
+		out.println(mapa.entrySet().toString());
+	
+	}
+
+
+}

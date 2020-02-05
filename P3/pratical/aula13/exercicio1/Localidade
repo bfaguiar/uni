@@ -1,0 +1,35 @@
+package exercicio1;
+
+public class Localidade extends Regiao {
+	
+	//extender regiao
+	private TipoLocalidade localidade;
+	
+	public Localidade(String nome, int populacao,TipoLocalidade localidade) {
+		super(nome, populacao);
+		this.localidade = localidade;
+	}
+
+	public TipoLocalidade getLocalidade() {
+		return localidade;
+	}
+
+	public void setLocalidade(TipoLocalidade localidade) {
+		this.localidade = localidade;
+	}
+	
+	
+	
+//	
+//	public TipoLocalidade getTipoLocalidadeCidade() {
+//		return localidade.CIDADE;
+//	}
+//	
+//	public TipoLocalidade getTipoLocalidadeVila() {
+//		return localidade.VILA;
+//	}
+//	
+//	public TipoLocalidade getTipoLocalidadeAldeia() {
+//		return localidade.ALDEIA;
+//	}
+}

@@ -1,0 +1,18 @@
+package exercicio3;
+
+public enum Brinquedo {
+	
+	Xman(0),
+	Barbie(1),
+	PowerRanger(2),
+	StarWars(3),
+	Legos(4),
+	Nenucos(5);
+	
+	private int ID;
+	
+	private Brinquedo(int ID) {
+		this.ID = ID;
+	}
+	
+}

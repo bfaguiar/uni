@@ -1,0 +1,31 @@
+Dec 20 15:07:06.341 HYPERVISOR: Release 0.2.17-amd64/Linux (tag 2017072410)
+Dec 20 15:07:06.341 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 57913.
+Dec 20 15:07:06.354 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 20 15:07:06.355 HYPERVISOR: exec_cmd: hypervisor working_dir /home/ubuntu/GNS3/projects/mini-projeto/project-files/dynamips 
+Dec 20 15:07:06.355 GENERAL: working_dir=/home/ubuntu/GNS3/projects/mini-projeto/project-files/dynamips
+Dec 20 15:07:06.355 HYPERVISOR: exec_cmd: ethsw create SW3 
+Dec 20 15:07:06.854 HYPERVISOR: exec_cmd: nio create_udp udp-28191335-be10-4ae5-96be-3a6ceb58b361 10004 127.0.0.1 10005 
+Dec 20 15:07:06.854 HYPERVISOR: exec_cmd: ethsw add_nio SW3 udp-28191335-be10-4ae5-96be-3a6ceb58b361 
+Dec 20 15:07:06.862 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28191335-be10-4ae5-96be-3a6ceb58b361 1 
+Dec 20 15:07:07.721 HYPERVISOR: exec_cmd: nio create_udp udp-28fdc1b5-955b-4bac-9deb-3c419915cbfb 10025 127.0.0.1 10024 
+Dec 20 15:07:07.721 HYPERVISOR: exec_cmd: ethsw add_nio SW3 udp-28fdc1b5-955b-4bac-9deb-3c419915cbfb 
+Dec 20 15:07:07.725 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28fdc1b5-955b-4bac-9deb-3c419915cbfb 1 
+Dec 20 15:07:07.875 HYPERVISOR: exec_cmd: nio create_udp udp-390797bb-161a-429a-be82-af4a699ae3df 10029 127.0.0.1 10028 
+Dec 20 15:07:07.875 HYPERVISOR: exec_cmd: ethsw add_nio SW3 udp-390797bb-161a-429a-be82-af4a699ae3df 
+Dec 20 15:07:07.885 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-390797bb-161a-429a-be82-af4a699ae3df 1 
+Dec 20 15:08:01.720 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28fdc1b5-955b-4bac-9deb-3c419915cbfb 1 
+Dec 20 15:08:01.732 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-390797bb-161a-429a-be82-af4a699ae3df 1 
+Dec 20 15:08:01.806 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28191335-be10-4ae5-96be-3a6ceb58b361 1 
+Dec 20 15:13:07.641 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28fdc1b5-955b-4bac-9deb-3c419915cbfb 1 
+Dec 20 15:13:07.656 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-390797bb-161a-429a-be82-af4a699ae3df 1 
+Dec 20 15:13:07.738 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28191335-be10-4ae5-96be-3a6ceb58b361 1 
+Dec 20 15:13:08.011 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28fdc1b5-955b-4bac-9deb-3c419915cbfb 1 
+Dec 20 15:13:08.022 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-390797bb-161a-429a-be82-af4a699ae3df 1 
+Dec 20 15:13:08.045 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28191335-be10-4ae5-96be-3a6ceb58b361 1 
+Dec 20 15:13:08.259 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28fdc1b5-955b-4bac-9deb-3c419915cbfb 1 
+Dec 20 15:13:08.260 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-390797bb-161a-429a-be82-af4a699ae3df 1 
+Dec 20 15:13:08.265 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-28191335-be10-4ae5-96be-3a6ceb58b361 1 
+Dec 20 15:49:24.667 HYPERVISOR: exec_cmd: ethsw delete SW3 
+Dec 20 15:49:24.724 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 20 15:49:24.969 HYPERVISOR: Stopped.
+Dec 20 15:49:24.969 GENERAL: reset done.

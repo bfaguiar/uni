@@ -1,0 +1,90 @@
+TRISx -> configurar se é input ou output: 1 - input, 0 - output.
+
+
+PORTx -> leitura de IN.
+LATx  -> Escritas em OUT. (latch).
+
+Se TRIS = 0
+
+	O valor LAT está na saída.
+
+SE TRIS = 1
+	
+	O Porto É IN PORTx
+	
+	
+	
+read-modify-write --> serve para alterar a configuração do porto E0 e não alterar a dos outros todos portos.
+
+Registos SFR's: registos para configuração dos portos.
+
+NO DATASHEET:
+
+no porto TRISB: 0xBF88 & 6040 = 0xBF886040
+
+E0 e E3 ficam com configuração como OUT.
+
+
+
+
+		    X  X
+TRISE: ???? ????
+
+os '??' que estão no 'X' são os que queremos alterar.
+Como fazemos para não alterar os outros?
+Uma conta com AND: 
+
+	???? ????
+AND 1111 0110
+-------------
+==	???? 0??0
+
+
+mudar para '1':
+
+
+		   X  X
+LATE: ???? ????
+
+	  ???? ????
+OR    0000 1001
+---------------
+      ???? 1??1
+      
+      
+GUIÃO 3:
+
+B0 : ultimo (primeiro do in) bit do registo.
+
+           ----------------
+PORT B     |             B0|  IN  // isolar o bit B0 porque queremos copiá-lo para a saída.  
+           ----------------
+           
+				    B0           
+           -----------
+LATE  $t3  |???? ????|    lw $t3, LATE
+           -----------
+           				
+$t3 AND 1111 1110 = ???? ???0 (fica no $t3)
+$t3 OR  ???? 000B0
+
+
+
+
+// contador binario: 4 bits:
+							0b01111			
+contador = (contador + 1) & 0x0F
+
+
+
+
+
+
+
+
+
+
+
+
+
+

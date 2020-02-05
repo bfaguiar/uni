@@ -1,0 +1,51 @@
+package ex3;
+
+import java.util.HashMap;
+import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import static java.lang.System.*;
+
+
+public class Translatenumbers {
+	
+	
+	
+	public static void main(String[] args) throws IOException {
+		
+		
+		
+	    Map<String, Integer> mapa = new HashMap<>();
+	    
+	    fileToMap(mapa);
+	    printMap(mapa);
+	    
+	    
+	
+	}
+	
+	static Map<String, Integer> fileToMap(Map<String, Integer> mapa) throws IOException {
+		
+		List<String> lines = Files.readAllLines(Paths.get("/home/bruno/Desktop/LFA/bloco1", "numbers.txt"));
+		
+	      	  lines.forEach(elem -> {
+	    	  String[] parse = elem.split(" - ");
+	    	  mapa.put(parse[1], Integer.parseInt(parse[0]));
+			});
+		return mapa;
+	      
+	}
+	
+	static void printMap(Map<String, Integer> mapa) {
+	     
+		out.println(mapa.entrySet().toString());
+	
+	}
+
+
+}

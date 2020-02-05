@@ -1,0 +1,321 @@
+#####################################################################################################################################
+##################################################################################################################################### Aula 1
+#####################################################################################################################################
+
+SPLIT EXEMPLO: 
+
+System.out.print("Introduza a operação a realizar (<f1> <operador> <f2>): ") --->>> ex: 1/2 + 2/4
+String line = in.nextLine();
+
+String[] f1_parts = line_parts[0].slipt(" ");
+num1 = Integer.parseInt(f1_parts[0]);
+den1 = Integer.parseInt(f2_parts[1]);
+
+String[] f2_parts = line_parts[2].slipt("/");
+num1 = Integer.parseInt(f1_parts[0]);
+den1 = Integer.parseInt(f2_parts[1]);
+
+
+
+___________________________________________________________________________________
+
+MAILING LIST OBJECT -> estado que consiste numa lista de nomes ou endereços.
+
+___________________________________________________________________________________
+
+OBJECT -> modulos que contêm "data".
+
+Exemplo:
+Carro preto = new Carro();
+
+Carro -> objecto
+preto -> referência
+___________________________________________________________________________________
+
+OOP -> é um objecto que contem uma identidade própria suficiente para ter um estado interno (que contem "data") e consegue responder às mensagens.
+
+___________________________________________________________________________________
+
+Math.abs(x) -> módulo 
+
+Math.asin(x) / Math.acos(x) / Math.atan(x) -> retorna o valor em radianos -> arcos do sen/cos/tg
+
+Math.exp(x) -> função exponencial
+
+Math.log(x) -> função logaritmica
+
+Math.pow(x,y) -> x^y
+
+Math.floor(x) -> valor inteiro mais proximo (menor ou igual) do x.
+
+Math.random() -> retorna um valor random no range 0.0 <= Math.random() < 1.0
+
+Math.nextUp -> retorna um float adjacente perto do infinito.
+
+Math.nextDown -> - infinito
+
+Math.PI -> 3.14...
+
+Math.E -> nº de neper
+
+#####################################################################################################################################
+##################################################################################################################################### Aula 2
+#####################################################################################################################################
+
+STATIC:
+os atributos e metodos existem sempre.
+variaveis globais
+
+NON STATIC:
+o contrario
+
+______________________________________________________________________________________________________________
+
+static {	    --->>>
+   instrução;       --->>>    bloco que serve para de inicialização. executa uma unica vez quando a classe é carregada.
+		    --->>>
+}
+
+______________________________________________________________________________________________________________
+
+programas executaveis --->>> contêm a função "main"
+
+programas/classes não executáveis --->>> programas que servem para auxiliar os programas executáveis.
+
+______________________________________________________________________________________________________________
+
+this.blabla = blabla; --->>> http://stackoverflow.com/questions/2411270/when-should-i-use-this-in-a-class
+
+em python "this" é "self". (bastante usado).
+
+null --->>> para dizer que o que estamos a fazer nao se refere a nenhum objeto.23-02-2016 
+
+
+______________________________________________________________________________________________________________
+
+private --->>> não pode ser usado fora da classe.
+
+protected --->>> so pode ser usado para classes derivadas ou do mesmo package. 
+
+EX.: a classe "Animal" que usa a classe "mamifero" e a classe "reptil".
+
+			Animal
+
+			/   \	
+
+		mamifero    reptil 
+
+________________________________________________________________________________________________________________
+
+CONSTRUTOR:
+
+- nao retorna nada (int, void, etc).
+
+- é chamado apenas uma vez.
+
+- nao devolver qualquer resultado.
+
+- tem sempre o nome da classe
+
+EXEMPLO:
+
+public funcion {
+this.bla = bla;
+}
+
+_____________________________________________________________________________________________________________________
+
+pacote(package) -> conjunto de classes relacionadas.
+                -> são agrupadas num pacote
+
+para chamar o pacote para um programa -> "import ..."
+
+
+
+#####################################################################################################################################
+#####################################################################################################################################  Estudo 1
+#####################################################################################################################################
+
+
+
+
+NEXTUP:
+
+retorna um float adjacente perto do infinito.
+
+ex.: public static float nextUp(float d)
+
+NEXDOWN:
+
+mesmo que o nextUp mas para o Infinito negativo.
+
+_____________________________________________________________________________________________________________________
+
+
+@override --->>> mete-se antes de uma função/método e indica que esse método/função é uma reescrita.  
+
+
+
+#####################################################################################################################################
+##################################################################################################################################### Aula 3
+#####################################################################################################################################
+
+
+
+HISTORIA DO JAVA...
+
+PROGRAMA MONOLITICO: programa num so ficheiro sem funções.
+
+ABSTRAÇÃO nao-sei-que.
+
+ARRAY: coleções de informação do mesmo tipo (homogénio).
+
+REGISTOS: coleções de informação heterogenico (int + string + double + etc).
+
+
+________________________________________________________________________________________________________________
+
+
+
+MÓDULOS:
+
+1- facilmente separaveis
+2- facilmente combinavel
+3- facil de ser compreendido isoladamente
+4- fazer as mudanças num modulo não devem ser ressentidas no programa geral
+5- dados protegidos (protected/private)
+
+inicialmente: programa principal + modulo tipo dados + modulo funções
+
+agora: programa + modulo tipo dados e operações associadas
+________________________________________________________________________________________________________________
+
+
+#####################################################################################################################################
+ESTA PARTE ESTÁ NO LIVRO DE JAVA NA PASTA DE PII - PÁGINA 370 - CAPÍTULO 8/8.4
+#####################################################################################################################################
+#####################################################################################################################################
+#####################################################################################################################################
+
+
+
+assert --->>> pré-condição para meter a funcionar bem (logica) o codigo...
+garante 	que a pré-condição é assegurada.
+o assert faz da condição uma expressão com valor booleano.
+se a condição for falsa (ou se tornar falsa), o programa termina.
+
+NÃO INFLUENCIA O PROGRAMA COMO O "IF" MAS INTERROMPE-O.
+
+usa-se para testar condições que TÊM que ser verdadeiras.
+
+EXEMPLO: 
++
+public static double raizquadrada(double x) {
+	
+	assert x>= 0; //pré-condição
+	double resultado;
+	...
+	assert Math.abs(resultado*resultado-x) <= NEAR_ZERO; //pós-condição
+	return resultado; 
+} 
+
+
+-enableassertions ou -ea --->>> comando para meter no terminal para ativar os asserts
+
+_____________________________________________________________________________
+
+
+abstracção algorítmica --->>> função.
+
+Tipo de Dados abstracto --->>> Objecto.
+__________________________________________________________________________________________________________________
+
+
+
+#####################################################################################################################################
+##################################################################################################################################### Aula 5
+#####################################################################################################################################
+EXCEPÇÕES:
+try/catch/finally
+
+
+
+try {
+     //o que se pretende fazer
+  
+  catch (condição/excepções) {
+  // o que fazer em caso de erro
+  }
+
+  catch (condição/excepções) {
+  // o que fazer em caso de erro
+  }
+  
+  catch (condição/excepções) {
+  // o que fazer em caso de erro
+  }
+
+  finally {
+  // bloco executado mesmo que tenha uma excepção
+  }
+
+
+#####################################################################################################################################
+##################################################################################################################################### Aula 6
+#####################################################################################################################################
+
+RECURSIVIDADE:
+
+funcao recursiva -> funcao que se chama a si propria
+
+para a utilizar:
+- tem que ser convergente (para nao ir para o infinito).
+
+...
+
+
+#####################################################################################################################################
+##################################################################################################################################### Aula 7
+#####################################################################################################################################
+
+arrays: mt uteis para guardar coisas numa determinada ordem.
+limitacoes:
+-tem que ter nºç fixo/definido
+-trabalhoso..
+
+_____________________
+
+LISTA LIGADA:
+cada estrutura aponta para outra estrutura do mesmo tipo.
+ao contrario do array, ela é dinamica.
+
+
+3| [referencia]-> 7 -> 1 -> null
+
+Exemplo:
+
+class Node {
+	int e;
+	Node next;
+} 
+
+________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

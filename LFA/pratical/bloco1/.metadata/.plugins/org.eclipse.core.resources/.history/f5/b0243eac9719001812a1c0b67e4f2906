@@ -1,0 +1,17 @@
+package teste;
+
+import static java.lang.System.*;
+
+
+public class teste {
+	
+	public static void main(String[] args) {
+		
+		Data data1 = new Data();
+		Data data2 = new Data();
+		
+		out.println(data1);
+		out.println(data2);
+	}
+
+}

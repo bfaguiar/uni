@@ -1,0 +1,15 @@
+package exercicio2;
+
+public abstract class GeladoDecorador implements Gelado {
+
+	protected Gelado gelado;
+	
+	public GeladoDecorador( Gelado gelado) {
+		this.gelado = gelado;
+	}
+	
+	public void base(int nBolas) {
+		gelado.base(nBolas);
+	}
+
+}

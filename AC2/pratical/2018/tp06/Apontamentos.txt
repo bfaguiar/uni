@@ -1,0 +1,13 @@
+prioriade 0 -> configurada por defeito. 7 também não é recomendado porque é muito alto.
+
+utilizando uma variável global [A.K.A. fora da main] podemos contornar o problema das funcoes void que não retornam valores, assim podemos alterar o valor da variável global.
+
+
+ADC1 - Vector   -> 27
+	   Priority -> IPC6
+	   Enable   -> IEC1
+	   Flag     -> IFS1
+	   
+	   
+	   
+

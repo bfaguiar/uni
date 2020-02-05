@@ -1,0 +1,33 @@
+O QUE PODE SAIR:
+
+
+
+
+1) criar uma nova classe "publicacao" para escrever uma publicacao que contenha data,
+string da publicação etc... para isso tenho que criar construtores.
+EXEMPLO: 
+Post[] pubs;                        |   class Post {
+				|	String titulo, texto;
+public addPost(Post p) {		|	Person author;
+				|   }
+}				|
+				|
+Person p = new Person(...)          |
+Post pub = new Post( "Exemple P2",  |
+"facilimo...");	 		|
+				|
+
+
+2) adicionar novos amigos atraves da classe Person.
+para isso tenho que criar um novo objecto com a classe Person.
+
+Exemplo: 
+Person[] friends;
+int nbFriends; //number of friends
+
+public void addFriend(Person p) {
+	if (nbFriends < friends.length)
+		friends[nbFriends +] = pi
+	} else {
+		extend(...)
+}

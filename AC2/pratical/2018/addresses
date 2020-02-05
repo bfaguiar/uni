@@ -1,0 +1,9 @@
+inicio da RAM: 0xA000 0000
+inicio do Program Flash Memory: 0x9000 0000
+inicio do segemento de texto: 0x90001400 .txt
+
+fazer ctrl + C para sair do programa.
+
+printInt(10, 0x00080010) //	vai escrever o número 10 com 8 casas decimais na base 10.
+
+

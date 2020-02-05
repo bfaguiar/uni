@@ -1,0 +1,95 @@
+Diogo Daniel Soares Ferreira
+Nº 76504
+1) Em anexo.
+
+2)
+
+Para a ordem de fixação de variáveis, seria conveniente fixar primeiro variáveis com o domínio mais pequeno.
+Assim, poderíamos por propagação de restrições diminuir rapidamente o domínio das variáveis com maior domínio,
+e criar uma árvore de pesquisa mais pequena, aumentando a eficiência da pesquisa.
+
+A heurística apresentada por Haralick & Elliott (1) é a seguinte: Tentar primeiro os locais onde é mais provável falhar.
+Na prática, neste tipo de problema, significa usar uma heurística onde se ordena os domínios do domínio mais pequeno até ao maior,
+e tentar fixar as variáveis do domínio nessa ordem.
+
+Referências Externas: 
+1 - R. M. Haralick and G. L. Elliot, ‘Increasing tree search efficiency for
+constraint satisfaction problems', 263-314
+2 - J. C. Beck & P. Prosser & R. J. Wallace, 'Toward Understanding Variable Ordering Heuristics for Constraint Satisfaction Problems'
+
+
+3)
+
+Poderia ser efetuada uma pesquisa por melhorias sucessivas, usando reparação heurística.
+Para efetuar uma pesquisa por melhorias sucessivas seria necessário primeiro definir uma solução, que não precisa de satisfazer as restrições do problema.
+Logo, poderia ser atribuída a cada variável um valor do seu domínio aleatoriamente.
+
+Depois, num loop infinito, as variáveis do domínio poderiam ser alteradas de maneira a reduzir os estados inválidos 
+(representados por restrições entre variáveis) até encontrar um estado válido para todas as variáveis.
+
+Se passado algum tempo previamente testado a solução não fosse encontrada,
+o processo poderia recomeçar com uma solução inicial aleatória diferente da anterior.
+
+Assim, garantíamos que por pior que fosse a solução inicial, uma solução satisfatória para o problema era sempre encontrada em tempo útil.
+
+Mesmo assim, a pesquisa por restrições demoraria, em média, menos tempo do que a pesquisa por melhorias sucessivas a encontrar uma solução válida para o problema.
+
+
+4)
+
+a)
+O cálculo de situações é um formalismo lógico desenhado para endereçar problemas com domínios dinâmicos,
+que podem ser alterados ou mantidos ao longo do tempo dependendo de estados anteriores e das ações tomadas.
+
+Esta abordagem contém a seguinte ontologia:
+
+- Ações são decisões que o agente toma que alteram o seu estado. Cada agente pode tomar uma ação ou um sequência de ações simultaneamente;
+- Situations são conjuntos de proposições de lógica de primeira-ordem que descrevem "estados" do problema resultantes de ações do agente;
+- Fluents são funções ou predicados cujo valor pode variar entre situações devido a ações de agentes;
+- Predicados intemporais ou eternos são predicados ou funções que se mantêm sempre verdadeiros ao longo do tempo.
+
+Uma sequência de ações é simplesmente a concatenação de várias ações. O Predicado especial Poss (Possible) é usado para indicar que a ação é executável.
+
+Um agente de cálculo de situações deve ser capaz de deduzir o resultado de uma sequência de ações (Projeção)
+e deve ser capaz de encontrar uma sequência que atinge um determinado efeito (Planeamento).
+
+Cada ação é descrita por dois axiomas: Possibility Axiom e Effect Axiom.
+Sendo a uma ação, s uma situação e pré-condições e pós-condições um conjunto de fórmulas de primeira-ordem,
+o Possibility Axiom é do tipo Pré-condições => Poss(a,s), que significa que é possível executar a ação "a" se as pré-condições estiverem satisfeitas.
+O Effect Axiom é do tipo Poss(a,s)=>Pós-condições, que significa que quando a ação "a" é tomada, vão ser verificadas as pós-condições indicadas.
+
+
+b)
+
+Um problema do cálculo de situações é a representação dos fluents que não se alteram com uma ação.
+Ou seja, para cada ação, são explicitados nos effect axioms as alterações com a ação tomada, mas nada é dito sobre os estados que se mantêm.
+
+Uma solução possível seria descrever exaustivamente todos os casos possíveis, e todos os resultados para cada caso, incluindo os fluents que se alteram e os que se mantêm.
+No entanto, se existirem F fluents e A ações, esta solução levaria a um número de frames com uma complexidade O(A*F).
+Como uma ação tem no máximo E efeitos, onde regularmente E é menor que F, deveria ser possível representar os frames com uma complexidade(A*E).
+Este problema é conhecido como problema de enquadramento representacional.
+
+
+Relacionado com este problema, também existe o problema de enquadramento inferencial.
+O objetivo é obter um conjunto de axiomas capaz de, num intervalo de tempo t, fazer depender o número de resultados das ações
+tomadas pelo agente apenas tendo em conta os seus efeitos, e não número de Fluents, ou o número de ações.
+Portanto, o objetivo é o projeto de resultados de t sequências de ações no tempo com uma complexidade O(E*t), em vez de O(F*t) ou O(A*E*t).
+
+
+A abordagem utilizada pelos axiomas Possibility Axiom e Effect Axiom utilizada pelo cálculo de situações apresenta problemas.
+Os efeitos implícitos das ações efetuadas não são tidos em conta.
+Esse problema é chamado de problema da ramificação. Uma solução para esse problema pode ser generalizar os estados
+para todas as ações efetuadas, tendo em conta também os efeitos indiretos da ação.
+
+
+Finalmente, existe ainda o problema da qualificação, para o qual não existe nenhuma solução completa.
+Este problema prende-se com o facto de ser praticamente impossível para um agente listar exaustivamente todas as pré-condições de um problema.
+No mundo real, pode ser impossível ter em conta todas as variáveis que pode depender uma ação, por serem demasiadas ou pelo ambiente ser pouco controlável.
+
+
+Referências Externas:
+Russel and Norvig - Artificial Intelligence: A Modern Approach, Cap. 10.3 - "Ations, Situations and Events"
+M. Thielscher, The Qualification Problem: A Solution to the Problem of Anomalous Models
+https://en.wikipedia.org/wiki/Situation_calculus
+https://en.wikipedia.org/wiki/Ramification_problem
+https://en.wikipedia.org/wiki/Qualification_problem

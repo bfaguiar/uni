@@ -1,0 +1,156 @@
+!
+!
+!
+!
+!
+!
+
+!
+! Last configuration change at 23:42:29 UTC Sun Jan 5 2020
+upgrade fpd auto
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+ip source-route
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+!
+!
+no ip domain lookup
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+!
+redundancy
+!
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 200.171.177.198 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+ ipv6 address 2001:61:0:8::2/64
+ ipv6 enable
+ ipv6 rip proc1 enable
+ ipv6 rip proc1 default-information originate
+!
+interface FastEthernet0/1
+ ip address 200.171.177.201 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+ ipv6 address 2001:61:0:9::1/64
+ ipv6 enable
+ ipv6 rip proc1 enable
+ ipv6 rip proc1 default-information originate
+!
+interface FastEthernet1/0
+ ip address 100.10.10.253 255.255.255.252
+ ip nat outside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+ ipv6 address 2777:7:7:7::1/126
+ ipv6 enable
+ ipv6 rip proc1 enable
+ ipv6 rip proc1 default-information originate
+!
+interface FastEthernet1/1
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+router rip
+ version 2
+ network 10.0.0.0
+ network 200.171.177.0
+ default-information originate
+ no auto-summary
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+!
+ip nat pool PROJNATPOOL 200.171.177.240 200.171.177.254 netmask 255.255.255.0
+ip nat inside source list 2 pool PROJNATPOOL overload
+ip nat inside source static 10.117.1.2 200.171.177.240
+ip nat inside source static 10.117.3.2 200.171.177.241
+ip route 100.0.0.0 255.255.255.0 100.10.10.254
+!
+access-list 2 permit 10.117.0.0 0.0.255.255
+access-list 2 permit 192.168.0.0 0.0.0.255
+no cdp log mismatch duplex
+ipv6 route 3000:A:A:A::/64 2777:7:7:7::2
+ipv6 router rip proc1
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+mgcp profile default
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+end

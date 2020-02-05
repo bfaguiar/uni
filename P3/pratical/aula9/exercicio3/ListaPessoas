@@ -1,0 +1,69 @@
+package exercicio3;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ListaPessoas {
+
+	ArrayList<Pessoa> lista;
+	
+	public ListaPessoas() {
+		lista = new ArrayList<>();
+	}
+
+	public boolean addPessoa(Pessoa p) {
+		if(lista.get(lista.size()).equals(p)){
+			lista.add(p);
+			return true;
+		}
+		else return false;
+	}
+	
+	public boolean removePessoa(Pessoa p){
+		if(lista.contains(p)){
+			lista.remove(p);
+			return true;
+		}
+		else return false;
+	}
+	
+	public int totalPessoas(){
+		return lista.size();
+	}
+	
+	public Pessoa getPessoa(int i) {
+		if (lista.contains(i))
+			return lista.get(i);
+		return null;
+	}
+	
+	Iterator<Pessoa> iterator() {
+		return (this).new VectorIterator();
+	}
+	
+	private class VectorIterator implements Iterator {
+		
+		private int indice;
+		
+		VectorIterator() {
+			indice = 0;
+		}
+		
+		public boolean hasNext() {
+			return (indice < lista.size());
+		}
+
+		public Pessoa next() {
+			if (hasNext()) {
+				Pessoa r = lista.get(indice);
+				indice++;
+				return r;
+			}	throw new IndexOutOfBoundsException("only " + lista.size() + " elements");
+		}
+		
+		public void remove() {	
+			throw new UnsupportedOperationException("Operação não suportada!");
+		}
+	}
+
+}

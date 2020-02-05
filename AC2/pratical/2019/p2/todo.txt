@@ -1,0 +1,1 @@
+Ligação de dispositivos simples de interação com o utilizador a portos de I/O do PIC32. Execução de programas de teste fornecidos para verificar o bom funcionamento dos dispositivos montados. Utilização do core timer do MIPS para gerar atrasos programáveis.

@@ -1,0 +1,30 @@
+package exercicio2;
+
+import static java.lang.System.out;
+
+public class Topping extends  GeladoDecorador {
+	
+
+
+	Gelado gelado;
+	String topping;
+	
+	public Topping(Gelado gelado, String topping) {
+		super(gelado);
+		// TODO Auto-generated constructor stub
+		this.topping = topping;
+	}
+	
+
+	@Override
+	public void base(int nBolas) {
+		// TODO Auto-generated method stub
+		super.base(nBolas);
+		out.printf(" com %s", topping);
+//		if (gelado instanceof GeladoSimples)
+//			out.printf("com %s\n", topping);
+//		if (gelado instanceof Cone)
+//			out.printf("com %s\n", topping);
+//	}
+	}
+}

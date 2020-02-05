@@ -1,0 +1,57 @@
+#algoritmo de pesquisa com restricoes.
+
+class PesquisaComrestricoes:
+
+    def __init__(self, dominios, restricoes):
+        self.dominios = dominios
+        self.restricoes = restricoes
+
+    def propagateConstraints(self, filaArestas):
+        if filaArestas ==[]:
+            return varval
+        (v1, v2) = filaArestas.pop(0)
+        vals = []
+        restricao = self.restricoes[v1, v2]
+        for x in varvals[v1]:
+            if any(restricao(v1, x, v2, y) for y in varvals[v2]):
+                vals = vals + [x]
+        if len(vals)< len(varvals[v1]):
+            arestas = [ (x, y) for (x, y) in self.restricoes if y == v1 ]
+            filaArestas = filaArestas + [x]
+            varvals[v1] = vals        
+        return self.propagateConstraints(varvals, FilaArestas)
+    
+    def solve(self, varvals = None):
+        if varvals == None:
+            varvals = self.dominios
+        if any(varvals[v] == [] for v in varvals):
+            return None
+        if all(len(varvals[v]) == 1 for v in varvals):
+            #verifica se safizfaz as restricoes
+            solucoes = {v: varvals[v][0] for v in varvals}
+#            for ((v1, v2), restricao) in self.restricoes.keys()
+#                if  not restricao(v1, solucoes[v1], v2, solucoes[v2]):
+#                   return None
+            return solucoes
+        for v in varvals:
+            if len(varvals[v]) > 1:
+                for x in varvals[v]:
+                    newvarvals = varvals.copy()
+                    newvarvals[v] = [x]
+                    arestas = [ (v1, v2) for (v1, v2) in self.restricoes if v2 == v]
+
+                    newvarvals = self.propagateConstraints(newvarvals, arestas)
+                    rec = self.solve(newvarvals)
+                    if rec != None:
+                        return rec
+        return  None
+
+rainhas = PesquisaComrestricoes(dominios, grafo).
+
+print(rainhas.solve())
+#pagina 145.
+
+
+
+
+                    

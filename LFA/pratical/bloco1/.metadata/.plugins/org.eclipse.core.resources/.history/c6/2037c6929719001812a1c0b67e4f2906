@@ -1,0 +1,13 @@
+package teste;
+
+public class teste {
+	
+	public static void main(String[] args) {
+		
+		Data data1 = new Data();
+		Data data2 = new Data();
+		
+		
+	}
+
+}

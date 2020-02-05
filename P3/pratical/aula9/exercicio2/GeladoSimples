@@ -1,0 +1,26 @@
+package exercicio2;
+import static java.lang.System.*;
+
+public class GeladoSimples implements Gelado {
+	
+	private String flavor;
+	private int nBolas;
+	
+	public GeladoSimples(String flavor) {
+		this.flavor = flavor;
+		
+	}
+	
+	public String getFlavor() {
+		return flavor;
+	}
+
+	@Override
+	public void base(int nBolas) {
+		// TODO Auto-generated method stub
+		this.nBolas = nBolas;
+		out.printf("%d bolas de gelado de %s\n", nBolas, flavor);
+	
+	}
+
+}

@@ -1,0 +1,17 @@
+package exercicio2;
+
+import static java.lang.System.out;
+
+public class Copo extends GeladoDecorador {
+		
+		GeladoSimples gelado;
+		
+		Copo(Gelado gelado) {
+			super(gelado);
+		}
+		
+		public void base(int nBolas) {
+			super.base(nBolas);
+			out.printf(" em copo\n");
+		}
+}

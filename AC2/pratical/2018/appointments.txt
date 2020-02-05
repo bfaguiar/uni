@@ -1,0 +1,24 @@
+TMR3 -> fout = 5Hz.
+PR3 = ?
+T3CONbits.TCKPS = 6; ## prescaler = 64;s
+			    = 0b110;
+
+Prescaler  >=  ( PBCLK / ( ( PRxMAX + 1 ) * fout ) ) 
+           ==  ( 20 * 10⁶ / ( 2¹⁶ - 1 + 1 ) * 5  ) = 61                 ## prescaler=64;
+	
+fout = ( fin / prescaler ) / ( PRx * 1 ) <=> PRx = ( ( 20M/64 ) / ( fout ) ) - 1 = 62500-1 = 62499 < 2^16
+
+
+////////// EX1 //////////////////
+
+Queremos encontrar o valor do prescaler para dividir para ver como chegar aos 2HZ
+
+"PRx é o valor da constante de 16 bits armazenada num dos registos PR1 a PR" -> 2^16 = PRxMAX
+PBCLK = 20MHZ 20*10⁶
+fout = 2; ## frequência de saída.
+
+então utilizando a formula do prescaler:
+
+Prescaler >= 20 * 10⁶ /  (2¹⁶ - 1 + 1) * 2 >= 152, logo o prescaler vai ser o 256.
+
+PR3 = ( ( 20 000 000 / 256 ) / 2 ) - 1 = 390615 < 2¹⁶

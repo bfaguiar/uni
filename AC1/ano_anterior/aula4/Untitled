@@ -1,0 +1,35 @@
+        .data
+        .text
+odd:   .space 28
+val:    .word 8, 4, 15, -1987, 9, 27, 16
+str1:   .ascii "Result is :\0"
+        .eqv print_int10, 1
+        .eqv print print_string, 4
+        .eqv size, 7
+        .globl main
+
+main:   addiu $sp, $sp, -4
+        sw $ra, 0($sp)
+        la $a0, val
+        li $a1, size
+        li $a2, odd
+        jal splito
+        move $t0, $v0
+       la $a0, str1
+       li $v0, print_string
+       syscall
+       li $t1, 1
+       li $t3, 0
+for:   bge $t1, $t0, endfor
+       sll $t2, $t1, 2      ## i * 4
+       la $t3, odd          ## $t3 =
+       addiu $t3, $t3, $t2
+       lw $a0, 0($t3)
+       li $v0, print_int10
+       syscall
+       addi $t1, $t1, 1
+       j for
+endfor: li $v0, 1
+         lw $ra, 0($sp)
+         addiu $sp, $sp, 4
+         jr $ra

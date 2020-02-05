@@ -1,0 +1,12 @@
+class BayerNet:
+    def __init__(self):
+        self.variables = {}
+    
+    def insert(self, a, mothers, prob):
+        self.variables
+
+    def jointProbability(self):
+
+bo = BayesNet()
+
+bo.insert(cenas)

@@ -1,0 +1,32 @@
+Dec 23 19:50:39.740 HYPERVISOR: Release 0.2.17-amd64/Linux (tag 2017072410)
+Dec 23 19:50:39.740 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 56647.
+Dec 23 19:50:39.751 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 23 19:50:39.751 HYPERVISOR: exec_cmd: hypervisor working_dir /home/ubuntu/GNS3/projects/mini-projeto/project-files/dynamips 
+Dec 23 19:50:39.751 GENERAL: working_dir=/home/ubuntu/GNS3/projects/mini-projeto/project-files/dynamips
+Dec 23 19:50:39.751 HYPERVISOR: exec_cmd: hypervisor working_dir /home/ubuntu/GNS3/projects/mini-projeto/project-files/dynamips/258c8aa3-18c6-44a8-a043-d8da733db0c9 
+Dec 23 19:50:39.751 GENERAL: working_dir=/home/ubuntu/GNS3/projects/mini-projeto/project-files/dynamips/258c8aa3-18c6-44a8-a043-d8da733db0c9
+Dec 23 19:50:39.751 HYPERVISOR: exec_cmd: vm create SWL3_F1 5 c3725 
+Dec 23 19:50:39.752 VM: VM SWL3_F1 created.
+Dec 23 19:50:39.752 HYPERVISOR: exec_cmd: vm set_con_tcp_port SWL3_F1 5021 
+Dec 23 19:50:39.752 HYPERVISOR: exec_cmd: c3725 get_mac_addr SWL3_F1 
+Dec 23 19:50:39.753 HYPERVISOR: exec_cmd: c3725 set_mac_addr SWL3_F1 c205.0fb4.0000 
+Dec 23 19:50:39.753 HYPERVISOR: exec_cmd: vm set_disk0 SWL3_F1 1 
+Dec 23 19:50:39.754 HYPERVISOR: exec_cmd: vm get_status SWL3_F1 
+Dec 23 19:50:39.754 HYPERVISOR: exec_cmd: vm slot_add_binding SWL3_F1 1 0 NM-16ESW 
+Dec 23 19:50:39.754 HYPERVISOR: exec_cmd: vm set_ios SWL3_F1 /home/ubuntu/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Dec 23 19:50:39.755 HYPERVISOR: exec_cmd: vm set_nvram SWL3_F1 256 
+Dec 23 19:50:40.695 HYPERVISOR: exec_cmd: nio create_udp udp-87d342a6-2d2b-40f3-b71b-faf2926ec34b 10040 127.0.0.1 10041 
+Dec 23 19:50:40.712 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SWL3_F1 0 0 udp-87d342a6-2d2b-40f3-b71b-faf2926ec34b 
+Dec 23 19:50:40.713 HYPERVISOR: exec_cmd: vm get_status SWL3_F1 
+Dec 23 19:50:40.766 HYPERVISOR: exec_cmd: nio create_udp udp-caf0ce04-5601-4da0-82f2-cbb0d991a654 10046 127.0.0.1 10047 
+Dec 23 19:50:40.767 HYPERVISOR: exec_cmd: vm slot_add_nio_binding SWL3_F1 0 1 udp-caf0ce04-5601-4da0-82f2-cbb0d991a654 
+Dec 23 19:50:40.767 HYPERVISOR: exec_cmd: vm get_status SWL3_F1 
+Dec 23 20:04:27.881 HYPERVISOR: exec_cmd: vm get_status SWL3_F1 
+Dec 23 20:04:27.883 HYPERVISOR: exec_cmd: vm extract_config SWL3_F1 
+Dec 23 20:04:28.441 HYPERVISOR: exec_cmd: vm get_status SWL3_F1 
+Dec 23 20:04:28.442 HYPERVISOR: exec_cmd: vm extract_config SWL3_F1 
+Dec 23 20:04:28.488 HYPERVISOR: exec_cmd: vm delete SWL3_F1 
+Dec 23 20:04:28.488 VM: VM SWL3_F1 destroyed.
+Dec 23 20:04:28.489 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 23 20:04:28.978 HYPERVISOR: Stopped.
+Dec 23 20:04:28.978 GENERAL: reset done.

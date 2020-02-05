@@ -1,0 +1,25 @@
+package exercicio2;
+
+import static java.lang.System.out;
+
+public class Cone extends GeladoDecorador {
+	
+	public Cone(Gelado gelado) {
+		super(gelado);
+		// TODO Auto-generated constructor stub
+	}
+
+	GeladoSimples gelado;
+	
+	
+	
+	public void base(int nBolas) {
+		super.base(nBolas);
+		out.printf(" em cone\n");
+	}
+	
+	public GeladoSimples getGelado() {
+		return gelado;
+	}
+
+}

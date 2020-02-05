@@ -1,0 +1,54 @@
+package exercicio1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Pais {
+	
+	private String nome;
+	Localidade capital;
+	ArrayList<Regiao> regioes;
+	
+	public Pais(String nome, Localidade capital) {
+		this.nome = nome;
+		this.capital = capital;
+		regioes = new ArrayList<>();
+	}
+	
+	public Pais(String nome) {
+		this.nome = nome;
+		capital = new Localidade("*Indefinida*", 0, null);
+		regioes = new ArrayList<>();
+	}
+	
+	public void addRegiao(Regiao regiao) {
+		regioes.add(regiao);
+	}
+	
+	public Regiao getRegiao(int i) {
+		return regioes.get(i);
+	}
+	
+	public void addRegioes(Regiao... regions) {
+		regioes.addAll(Arrays.asList(regions));
+	}
+	
+	public int getPopulation() {
+		 return regioes.parallelStream().mapToInt(r -> r.getPopulacao()).sum();
+		 
+	}
+
+	@Override
+	public String toString() {
+		return "Pais [regioes=" + regioes + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}
