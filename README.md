@@ -4,10 +4,10 @@ uni subjects
 
 📱 Course overview EN: https://www.ua.pt/en/c/23/p
 
-📌 Appointtments: http://ruieduardofalopes.wixsite.com/apontamentos
+📌 Appointtments: https://bit.ly/31t5tF6
 
-📌 Material diospiro: http://apontamentosect.diozpiro.com
+📌 Material diospiro: https://bit.ly/39eUFNv
 
-📌 Material Margarida: https://www.dropbox.com/sh/54kpnkl5cjqtqgt/AACX67HuaKTBYAyPr9EuSQXSa?dl=0&fbclid=IwAR0ue6dflYTi7tsKFP7gucxCZOUoUXzS5cvq7V5mlvj2p2BlcoYN1ALmHYQ
+📌 Material Margarida: https://bit.ly/36VztdD
 
 
